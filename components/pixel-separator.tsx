@@ -5,7 +5,7 @@ interface PixelSeparatorProps {
   color?: string;
 }
 
-export function PixelSeparator({ className, color = "#FFC72C" }: PixelSeparatorProps) {
+export function PixelSeparator({ className, color = "#ff1493" }: PixelSeparatorProps) {
   return (
     <div className={cn("w-full flex justify-center my-8", className)}>
       <div className="flex items-center space-x-2">

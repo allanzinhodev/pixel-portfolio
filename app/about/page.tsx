@@ -9,33 +9,33 @@ export default function AboutPage() {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Me</h1>
           <p className="text-xl max-w-2xl mx-auto">
-            Get to know the person behind the pixels.
+            Get to know the person behind these pixels.
           </p>
         </div>
-        
+
         <PixelSeparator />
-        
+
         <AboutSection />
-        
+
         <PixelSeparator />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold">My Journey</h2>
-            
+
             <p className="text-lg">
-              My fascination with pixel art began in the early days of gaming, where limited resolutions forced designers to make every pixel count. This appreciation evolved into a passion for creating digital experiences that combine nostalgic elements with modern functionality.
+              I'm a developer with a multidisciplinary background in software development and graphic design. I've been creating games since I was 10 years old, and that passion has only grown stronger over the years. Now at 31, I focus on building immersive online game experiences using C++.
             </p>
-            
+
             <p className="text-lg">
-              Over the years, I've worked with startups, established companies, and independent creators to bring their visions to life through the unique lens of pixel art aesthetics.
+              Games have always been the foundation of everything I've learned. In art, my references were always game artists — from pixel art pioneers to concept artists shaping modern titles. In programming, I've always been drawn to understanding how games were built, studying the history and mechanics behind them since the very beginning of the medium. Every skill I've developed traces back to that same core passion.
             </p>
-            
+
             <p className="text-lg">
-              I believe that limitations breed creativity, and the constraints of pixel art encourage innovative solutions that stand out in today's digital landscape.
+              My approach to computer science is deeply rooted in the past. Old consoles and their hardware architecture are my greatest source of study — understanding how those machines worked at their limits is what drives my curiosity and shapes the way I think about software, performance, and design to this day.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 gap-4">
             <div className="relative h-48 pixel-card overflow-hidden">
               <Image
@@ -46,7 +46,7 @@ export default function AboutPage() {
                 style={{ imageRendering: "pixelated" }}
               />
             </div>
-            
+
             <div className="relative h-48 pixel-card overflow-hidden">
               <Image
                 src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -56,7 +56,7 @@ export default function AboutPage() {
                 style={{ imageRendering: "pixelated" }}
               />
             </div>
-            
+
             <div className="relative h-48 pixel-card overflow-hidden">
               <Image
                 src="https://images.pexels.com/photos/5935794/pexels-photo-5935794.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 style={{ imageRendering: "pixelated" }}
               />
             </div>
-            
+
             <div className="relative h-48 pixel-card overflow-hidden">
               <Image
                 src="https://images.pexels.com/photos/7014337/pexels-photo-7014337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

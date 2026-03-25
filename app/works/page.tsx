@@ -4,11 +4,11 @@ import { WorksCard } from "@/components/works-card";
 // Sample works data
 const works = [
   {
-    title: "Pixel Arcade",
-    description: "A retro-inspired game collection with modern gameplay mechanics.",
-    slug: "pixel-arcade",
+    title: "Sertania Online",
+    description: "A custom multiplayer online RPG built on open-source technologies.",
+    slug: "sertania-online",
     imageUrl: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["Game Design", "Pixel Art", "JavaScript"]
+    tags: ["C++", "Game Server", "MMORPG"]
   },
   {
     title: "Burger Bytes",

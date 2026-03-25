@@ -50,7 +50,7 @@ export function NavMenu() {
             className={cn(
               "pixel-button rounded-none flex flex-col items-center justify-center px-3 py-2 h-14 w-20 sm:w-24",
               pathname === item.path 
-                ? "dark:bg-yellow-500 dark:text-background bg-primary border-black" 
+                ? "dark:bg-rose-600 dark:text-background bg-primary border-black" 
                 : "bg-white dark:bg-foreground border-black hover:bg-primary/80"
             )}
           >
