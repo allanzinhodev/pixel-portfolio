@@ -2,14 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { BrainCircuitIcon, CodeIcon, PaintbrushIcon, GamepadIcon } from "lucide-react";
-
-const skills = [
-  { name: "Web Development", icon: <CodeIcon className="h-6 w-6" />, level: 90 },
-  { name: "UI/UX Design", icon: <PaintbrushIcon className="h-6 w-6" />, level: 85 },
-  { name: "Game Development", icon: <GamepadIcon className="h-6 w-6" />, level: 75 },
-  { name: "AI Integration", icon: <BrainCircuitIcon className="h-6 w-6" />, level: 80 },
-];
+import { MessageSquareIcon, CodeIcon, PaintbrushIcon, GamepadIcon } from "lucide-react";
 
 export function AboutSection() {
   return (
@@ -43,42 +36,47 @@ export function AboutSection() {
           transition={{ duration: 0.5 }}
           className="space-y-6"
         >
-          <h3 className="text-2xl font-bold">Hi, I'm Creative Developer</h3>
+          <h3 className="text-2xl font-bold">Hi, I&apos;m Creative Developer</h3>
 
           <p className="text-lg">
-            I'm a multidisciplinary developer with a background in both software development and graphic design. That combination shaped the way I build software — always focused on meeting core requirements while keeping the user experience at the center of every decision.
+            I&apos;m a multidisciplinary developer with a background in both software development and graphic design. That combination shaped the way I build software — always focused on meeting core requirements while keeping the user experience at the center of every decision.
           </p>
 
           <p className="text-lg">
-            I've been passionate about games since I was 10, and that passion drives everything: from studying old console architectures to understand computing at its limits, to crafting immersive Games and Software solutions.
+            I&apos;ve been passionate about games since I was 10, and that passion drives everything: from studying old console architectures to understand computing at its limits, to crafting immersive Games and Software solutions.
           </p>
 
           <div className="space-y-4 mt-8">
             <h4 className="text-xl font-bold">My Skills</h4>
 
-            <div className="space-y-4">
-              {skills.map((skill) => (
-                <div key={skill.name} className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <div className="mr-2 p-2 bg-primary text-black">
-                        {skill.icon}
-                      </div>
-                      <span className="font-medium">{skill.name}</span>
-                    </div>
-                    <span className="font-bold">{skill.level}%</span>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-3">
+                {[
+                  { name: "Web Development", icon: <CodeIcon className="h-5 w-5" /> },
+                  { name: "UI/UX Design", icon: <PaintbrushIcon className="h-5 w-5" /> },
+                  { name: "Game Development", icon: <GamepadIcon className="h-5 w-5" /> },
+                  { name: "Communication", icon: <MessageSquareIcon className="h-5 w-5" /> },
+                ].map((skill) => (
+                  <div key={skill.name} className="flex items-center gap-2 border-2 border-foreground px-3 h-10 bg-primary/10">
+                    <span className="text-primary flex-shrink-0">{skill.icon}</span>
+                    <span className="font-medium text-base">{skill.name}</span>
                   </div>
+                ))}
+              </div>
 
-                  <div className="h-6 w-full bg-gray-200 dark:bg-gray-700 border-2 border-black">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1, delay: 0.5 }}
-                      className="h-full bg-primary"
-                    ></motion.div>
+              <div className="space-y-3">
+                {[
+                  { name: "Reverse Engineering", icon: "🔍" },
+                  { name: "C++", icon: "⚙️" },
+                  { name: "Photoshop", icon: "🎨" },
+                  { name: "Pixel Art", icon: "🕹️" },
+                ].map((skill) => (
+                  <div key={skill.name} className="flex items-center gap-2 border-2 border-foreground px-3 h-10 bg-primary/10">
+                    <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-sm leading-none">{skill.icon}</span>
+                    <span className="font-medium text-base">{skill.name}</span>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
@@ -86,3 +84,4 @@ export function AboutSection() {
     </section>
   );
 }
+

@@ -45,11 +45,11 @@ const featuredWorks = [
     tags: ["C++", "Game Server", "MMORPG"]
   },
   {
-    title: "Burger Bytes",
-    description: "A fast-food ordering system with a delightful pixel art interface.",
-    slug: "burger-bytes",
+    title: "PokeAI",
+    description: "An AI-powered Pokédex that analyzes and generates competitive Pokémon strategies.",
+    slug: "pokeai",
     imageUrl: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["UI/UX", "React", "Ecommerce"]
+    tags: ["AI/ML", "React", "Next.js"]
   }
 ];
 

@@ -15,33 +15,13 @@ const works = {
     tags: ["C++", "Game Server", "MMORPG"],
     link: "https://sertania.example.com"
   },
-  "burger-bytes": {
-    title: "Burger Bytes",
-    description: "A fast-food ordering system with a delightful pixel art interface.",
-    content: `
-      Burger Bytes is a modern food ordering platform that stands out with its unique pixel art interface, making the ordering process both fun and efficient.
-
-      The project demonstrates how retro-style visuals can enhance user experience in practical applications, creating memorable interactions for customers.
-
-      Key Features:
-
-      1. Interactive Menu
-      2. Real-time Order Tracking
-      3. Custom Order Builder
-      4. Loyalty Program
-      5. Mobile-first Design
-
-      Technical Stack:
-
-      - Next.js for the frontend
-      - Supabase for backend services
-      - Stripe for payments
-      - PWA support
-      - Real-time notifications
-    `,
+  "pokeai": {
+    title: "PokeAI",
+    description: "An AI-powered Pokédex that analyzes and generates competitive Pokémon strategies.",
+    content: "",
     imageUrl: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["UI/UX", "React", "Ecommerce"],
-    link: "https://burger-bytes.example.com"
+    tags: ["AI/ML", "React", "Next.js"],
+    link: "https://pokeai.example.com"
   }
 };
 
@@ -178,6 +158,87 @@ export default function WorksPost({ params }: { params: { slug: string } }) {
                       ))}
                     </tbody>
                   </table>
+                </div>
+              </div>
+            ) : params.slug === "pokeai" ? (
+              <div className="mt-8 space-y-4 text-lg leading-relaxed">
+                <h2 className="text-2xl font-bold text-foreground">When AI Learns to Play Pokémon: Meet FireredBOT and PokeAI</h2>
+                
+                <div className="my-8 aspect-video w-full border-4 border-foreground">
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/Oeq3j_WG5BQ" 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                  ></iframe>
+                </div>
+
+                <p>What if a bot could play Pokémon from start to finish — with zero human intervention? That's exactly the challenge behind two experimental projects: <strong>FireredBOT</strong> and <strong>PokeAI</strong>. Together, they push the boundaries of automation, contextual intelligence, and computational vision applied to classic games.</p>
+
+                <hr className="border-t-2 border-foreground/20 my-6" />
+
+                <h3 className="text-xl font-bold text-primary border-b-2 border-primary pb-1">FireredBOT — The Bot That Plays Pokémon FireRed on Its Own</h3>
+                <p className="flex items-center space-x-2 text-primary overflow-hidden text-ellipsis whitespace-nowrap">
+                  🔗 <a href="https://github.com/allanzinhodev/fireredBOT" target="_blank" rel="noopener noreferrer" className="hover:underline">github.com/allanzinhodev/fireredBOT</a>
+                </p>
+
+                <p>FireredBOT is a Python-based automation system capable of playing Pokémon FireRed fully autonomously. No direct commands, no human input — the bot makes every decision on its own.</p>
+
+                <h4 className="text-lg font-bold mt-6 mb-2">What it does</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Explores maps automatically using a custom pathfinding system that identifies walkable paths, entrances, exits, and territory boundaries</li>
+                  <li>Battles strategically, prioritizing moves based on type effectiveness, base damage, and remaining PP</li>
+                  <li>Automatically catches Pokémon, expanding the Pokédex without any human help</li>
+                  <li>Manages the inventory and returns to the Pokémon Center whenever needed</li>
+                  <li>Reads emulator memory (VBA-RR or mGBA) in real time, tracking HP, player position, wild Pokémon IDs, and game state</li>
+                </ul>
+
+                <h4 className="text-lg font-bold mt-6 mb-2">Twitch Integration</h4>
+                <p>One of the most creative features is the Twitch API integration: viewers can send commands in the chat and influence the bot's behavior in real time — switching between exploration, catching, battling modes, or even daring the bot to take risks. It's automation with a layer of live interactivity.</p>
+                
+                <p className="bg-primary/10 p-4 border-l-4 border-primary italic">✅ Goal achieved: the bot works as intended, handles complex tasks, and makes context-aware decisions. The project is complete and will not receive further updates.</p>
+
+                <hr className="border-t-2 border-foreground/20 my-6" />
+
+                <h3 className="text-xl font-bold text-primary border-b-2 border-primary pb-1">PokeAI — Pokémon Crystal Automation in Pure Lua</h3>
+                <p className="flex items-center space-x-2 text-primary overflow-hidden text-ellipsis whitespace-nowrap">
+                  🔗 <a href="https://github.com/allanzinhodev/pokeAI" target="_blank" rel="noopener noreferrer" className="hover:underline">github.com/allanzinhodev/pokeAI</a>
+                </p>
+
+                <p>PokeAI grew out of the same experiments but took a completely different direction — focused on Pokémon Crystal and rebuilt from scratch in pure Lua, running directly inside the VBA-RR emulator with no Python dependencies.</p>
+
+                <h4 className="text-lg font-bold mt-6 mb-2">A "computational vision" through memory</h4>
+                <p>Instead of capturing screenshots or using vision models, PokeAI reads tile offsets directly from the game's RAM, building a real-time representation of the world. This allows the bot to identify:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Collisions, walls, and obstacles</li>
+                  <li>Doors and building entrances</li>
+                  <li>NPCs and available interactions</li>
+                  <li>The current battle menu state (Fight, Pokémon, Pack, Run)</li>
+                </ul>
+
+                <h4 className="text-lg font-bold mt-6 mb-2">System features</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Adaptive navigation with natural obstacle avoidance</li>
+                  <li>Automatic Pokémon catching system</li>
+                  <li>Automatic Pokémon and move switching in battle</li>
+                  <li>Anti-freeze systems to keep the bot running smoothly</li>
+                  <li>Battle intelligence script for wild encounters and trainer fights</li>
+                  <li>Modular Lua architecture: <code className="bg-foreground/10 px-1 py-0.5 rounded text-sm font-mono">main.lua</code>, <code className="bg-foreground/10 px-1 py-0.5 rounded text-sm font-mono">battle.lua</code>, <code className="bg-foreground/10 px-1 py-0.5 rounded text-sm font-mono">move.lua</code>, <code className="bg-foreground/10 px-1 py-0.5 rounded text-sm font-mono">map.lua</code></li>
+                </ul>
+
+                <p className="bg-green-500/10 p-4 border-l-4 border-green-500 italic mt-4">The project is in active experimental phase, and future improvements may include OCR, neural networks, or Python reintegration for more complex analysis. You can follow the development live on <a href="https://twitch.tv/allaorodrigues" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">twitch.tv/allaorodrigues</a>.</p>
+
+                <hr className="border-t-2 border-foreground/20 my-6" />
+
+                <h3 className="text-xl font-bold text-primary border-b-2 border-primary pb-1">Why These Projects Matter</h3>
+                <p>Beyond being fascinating projects in their own right, FireredBOT and PokeAI showcase concepts with real-world applications: memory reading and manipulation, contextual decision systems, pathfinding, complex task automation, and live platform integration. They are educational experiments that show how software engineering can turn a nostalgic game into an AI laboratory.</p>
+
+                <div className="mt-8 p-4 border-2 border-foreground text-center bg-foreground/5 text-sm sm:text-base">
+                  <p>Developed by Allan Rodrigues — <a href="https://linkedin.com/in/allanzinho" className="text-primary hover:underline break-all" target="_blank" rel="noopener noreferrer">linkedin.com/in/allanzinho</a></p>
+                  <p>Watch it live at <a href="https://twitch.tv/allaorodrigues" className="text-primary hover:underline break-all" target="_blank" rel="noopener noreferrer">twitch.tv/allaorodrigues</a></p>
                 </div>
               </div>
             ) : (
