@@ -1,0 +1,1 @@
+"use strict";exports.id=835,exports.ids=[835],exports.modules={4835:(o,e,t)=>{t.r(e),t.d(e,{$$typeof:()=>p,__esModule:()=>l,default:()=>i});var r=t(7536);let s=(0,r.createProxy)(String.raw`C:\Users\Rose\portfolio\pixel-portfolio\components\custom-cursor.tsx`),{__esModule:l,$$typeof:p}=s,d=s.default,i=d}};

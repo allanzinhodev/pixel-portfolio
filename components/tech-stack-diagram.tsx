@@ -26,7 +26,7 @@ interface NodeData {
 }
 
 function PixelNode({ data }: NodeProps) {
-  const d = data as NodeData;
+  const d = data as unknown as NodeData;
   const accent = d.accent ?? "#ff1493";
   return (
     <div
