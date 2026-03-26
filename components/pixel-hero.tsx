@@ -57,7 +57,7 @@ export function PixelHero() {
               transition={{ delay: 0.9, duration: 0.5 }}
               className="text-xl md:text-2xl"
             >
-              I design and build creative websites with pixel art aesthetics, bringing a unique retro feeling to modern web experiences.
+              I solve problems with efficiency in mind. always weighing the human cost and the logistics behind every decision. Good solutions mean nothing if they're hard to use, so I translate complexity into experiences that actually make people's lives easier. Experience isn't an afterthought; it's the whole point.
             </motion.p>
           </div>
 

@@ -7,6 +7,7 @@ import { WorksCard } from "@/components/works-card";
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DinoGame } from "@/components/DinoGame";
 
 // Sample data
 const featuredPosts = [
@@ -23,7 +24,7 @@ const featuredPosts = [
     excerpt: "Learn the techniques to maintain pixel art aesthetics across different screen sizes while ensuring your designs remain responsive.",
     slug: "responsive-pixel-art-designs",
     date: new Date("2023-05-22"),
-    imageUrl: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/capas/sertania.png",
     readTime: 5
   },
   {
@@ -41,14 +42,14 @@ const featuredWorks = [
     title: "Sertania Online",
     description: "A custom multiplayer online RPG built on open-source technologies.",
     slug: "sertania-online",
-    imageUrl: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/capas/sertania.png",
     tags: ["C++", "Game Server", "MMORPG"]
   },
   {
     title: "PokeAI",
     description: "An AI-powered Pokédex that analyzes and generates competitive Pokémon strategies.",
     slug: "pokeai",
-    imageUrl: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/capas/pokeai.png",
     tags: ["AI/ML", "React", "Next.js"]
   }
 ];
@@ -123,6 +124,12 @@ export default function Home() {
             />
           ))}
         </div>
+      </section>
+
+      <PixelSeparator />
+      
+      <section className="container mx-auto px-4 py-16">
+        <DinoGame />
       </section>
     </div>
   );

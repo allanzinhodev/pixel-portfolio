@@ -11,7 +11,7 @@ const works = {
     title: "Sertania Online",
     description: "A custom multiplayer online RPG built on open-source technologies.",
     content: "",
-    imageUrl: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/capas/sertania.png",
     tags: ["C++", "Game Server", "MMORPG"],
     link: "https://sertania.example.com"
   },
@@ -19,9 +19,17 @@ const works = {
     title: "PokeAI",
     description: "An AI-powered Pokédex that analyzes and generates competitive Pokémon strategies.",
     content: "",
-    imageUrl: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/capas/pokeai.png",
     tags: ["AI/ML", "React", "Next.js"],
     link: "https://pokeai.example.com"
+  },
+  "pixel-art-portfolio": {
+    title: "Pixel Art Portfolio",
+    description: "A portfolio template for digital artists featuring a pixel art aesthetic.",
+    content: "This is a digital portfolio specifically crafted to highlight pixel art and retro aesthetics. It uses custom CSS components and animations to evoke a sense of nostalgia while maintaining modern web standards.",
+    imageUrl: "/capas/pixelfolio.gif",
+    tags: ["Web Design", "Next.js", "Portfolio"],
+    link: "https://github.com/allanzinhodev/pixel-portfolio"
   }
 };
 

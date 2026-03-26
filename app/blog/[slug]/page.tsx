@@ -45,7 +45,7 @@ const blogPosts = {
       By following these guidelines, you can create pixel art designs that maintain their charm across all devices.
     `,
     date: new Date("2023-05-22"),
-    imageUrl: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/capas/sertania.png",
     readTime: 5
   }
 };

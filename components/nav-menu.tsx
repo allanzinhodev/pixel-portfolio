@@ -68,13 +68,11 @@ export function NavMenu() {
         whileTap={{ scale: 0.95 }}
       >
         <Link 
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/works/pixel-art-portfolio"
           className="pixel-button rounded-none flex flex-col items-center justify-center px-3 py-2 h-14 w-20 sm:w-24 bg-white dark:bg-foreground border-black hover:bg-primary/80"
         >
           <span className="mb-1"><Gamepad2Icon size={20} /></span>
-          <span className="text-xs sm:text-sm font-bold">Play</span>
+          <span className="text-xs sm:text-sm font-bold text-center leading-tight mt-1">Pixel Art</span>
         </Link>
       </motion.div>
     </nav>

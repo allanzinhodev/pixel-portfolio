@@ -16,7 +16,7 @@ const blogPosts = [
     excerpt: "Learn the techniques to maintain pixel art aesthetics across different screen sizes while ensuring your designs remain responsive.",
     slug: "responsive-pixel-art-designs",
     date: new Date("2023-05-22"),
-    imageUrl: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/capas/sertania.png",
     readTime: 5
   },
   {
