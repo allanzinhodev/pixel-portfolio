@@ -49,31 +49,51 @@ export function AboutSection() {
           <div className="space-y-4 mt-8">
             <h4 className="text-xl font-bold">My Skills</h4>
 
-            <div className="grid grid-cols-2 gap-3">
-              <div className="space-y-3">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-6">
+              <div className="space-y-6">
                 {[
-                  { name: "Web Development", icon: <CodeIcon className="h-5 w-5" /> },
-                  { name: "UI/UX Design", icon: <PaintbrushIcon className="h-5 w-5" /> },
-                  { name: "Game Development", icon: <GamepadIcon className="h-5 w-5" /> },
-                  { name: "Communication", icon: <MessageSquareIcon className="h-5 w-5" /> },
+                  { name: "Web Development", icon: <CodeIcon className="h-5 w-5" />, level: 100 },
+                  { name: "UI/UX Design", icon: <PaintbrushIcon className="h-5 w-5" />, level: 100 },
+                  { name: "Game Development", icon: <GamepadIcon className="h-5 w-5" />, level: 100 },
+                  { name: "Communication", icon: <MessageSquareIcon className="h-5 w-5" />, level: 100 },
                 ].map((skill) => (
-                  <div key={skill.name} className="flex items-center gap-2 border-2 border-foreground px-3 h-10 bg-primary/10">
-                    <span className="text-primary flex-shrink-0">{skill.icon}</span>
-                    <span className="font-medium text-base">{skill.name}</span>
+                  <div key={skill.name} className="flex flex-col gap-1">
+                    <div className="flex items-center gap-2 border-2 border-foreground px-3 h-10 bg-primary/10">
+                      <span className="text-primary flex-shrink-0">{skill.icon}</span>
+                      <span className="font-medium text-base">{skill.name}</span>
+                    </div>
+                    <div className="h-3 w-full bg-foreground/10 border-2 border-foreground dark:bg-foreground/20">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        className="h-full bg-primary"
+                      ></motion.div>
+                    </div>
                   </div>
                 ))}
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-6">
                 {[
-                  { name: "Reverse Engineering", icon: "🔍" },
-                  { name: "C++", icon: "⚙️" },
-                  { name: "Photoshop", icon: "🎨" },
-                  { name: "Pixel Art", icon: "🕹️" },
+                  { name: "Reverse Engineering", icon: "🔍", level: 100 },
+                  { name: "C++", icon: "⚙️", level: 100 },
+                  { name: "Photoshop", icon: "🎨", level: 100 },
+                  { name: "Pixel Art", icon: "🕹️", level: 100 },
                 ].map((skill) => (
-                  <div key={skill.name} className="flex items-center gap-2 border-2 border-foreground px-3 h-10 bg-primary/10">
-                    <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-sm leading-none">{skill.icon}</span>
-                    <span className="font-medium text-base">{skill.name}</span>
+                  <div key={skill.name} className="flex flex-col gap-1">
+                    <div className="flex items-center gap-2 border-2 border-foreground px-3 h-10 bg-primary/10">
+                      <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-sm leading-none">{skill.icon}</span>
+                      <span className="font-medium text-base">{skill.name}</span>
+                    </div>
+                    <div className="h-3 w-full bg-foreground/10 border-2 border-foreground dark:bg-foreground/20">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        className="h-full bg-primary"
+                      ></motion.div>
+                    </div>
                   </div>
                 ))}
               </div>

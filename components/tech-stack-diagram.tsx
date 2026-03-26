@@ -22,7 +22,7 @@ interface NodeData {
   label: string;
   sub?: string;
   group?: string;
-  accent?: string; // tailwind bg class or hex
+  accent?: string;
 }
 
 function PixelNode({ data }: NodeProps) {
@@ -76,101 +76,115 @@ const nodeTypes = {
   groupLabel: GroupLabel,
 };
 
-// ── Node & Edge definitions ─────────────────────────────────────────────────
+// ── Colors ──────────────────────────────────────────────────────────────────
 
-const PINK = "#ff1493";
-const ROSE = "#e11d48";
-const CYAN = "#06b6d4";
-const GOLD = "#f59e0b";
-const LIME = "#84cc16";
+const PINK = "#ff1493";  // Game Client
+const CYAN = "#06b6d4";  // Game Engine (TFS)
+const GOLD = "#f59e0b";  // Web Layer
+const ROSE = "#e11d48";  // Database
+const LIME = "#84cc16";  // Dev Tools
+
+// ── Architecture:
+//
+//   [OTClient]  →  TCP 7171  →  [TFS 1.4.2 C++]  ↔  [MySQL]
+//                                      ↘
+//                              [RME]  [Object Builder]
+//   [Browser]  →  HTTP  →  [NGINX]  →  [MyAcc (Gesior)]  ↔  [MySQL]
+//
 
 const initialNodes = [
   // Group labels
   {
-    id: "gl-core",
-    type: "groupLabel",
-    position: { x: 320, y: 0 },
-    data: { label: "🕹 Core", accent: PINK },
-    draggable: false,
-    selectable: false,
-  },
-  {
-    id: "gl-render",
-    type: "groupLabel",
-    position: { x: 60, y: 130 },
-    data: { label: "🖼 Rendering", accent: CYAN },
-    draggable: false,
-    selectable: false,
-  },
-  {
     id: "gl-client",
     type: "groupLabel",
-    position: { x: 570, y: 130 },
+    position: { x: 20, y: 0 },
+    data: { label: "🎮 Game Client", accent: PINK },
+    draggable: false,
+    selectable: false,
+  },
+  {
+    id: "gl-server",
+    type: "groupLabel",
+    position: { x: 280, y: 0 },
+    data: { label: "⚙️ Game Server", accent: CYAN },
+    draggable: false,
+    selectable: false,
+  },
+  {
+    id: "gl-db",
+    type: "groupLabel",
+    position: { x: 560, y: 0 },
+    data: { label: "💾 Database", accent: ROSE },
+    draggable: false,
+    selectable: false,
+  },
+  {
+    id: "gl-web",
+    type: "groupLabel",
+    position: { x: 280, y: 230 },
     data: { label: "🌐 Web Layer", accent: GOLD },
     draggable: false,
     selectable: false,
   },
   {
-    id: "gl-audio",
+    id: "gl-tools",
     type: "groupLabel",
-    position: { x: 60, y: 310 },
-    data: { label: "🔊 Audio", accent: LIME },
-    draggable: false,
-    selectable: false,
-  },
-  {
-    id: "gl-storage",
-    type: "groupLabel",
-    position: { x: 560, y: 310 },
-    data: { label: "💾 Storage", accent: ROSE },
+    position: { x: 20, y: 340 },
+    data: { label: "🛠 Dev Tools", accent: LIME },
     draggable: false,
     selectable: false,
   },
 
-  // Core
+  // Game Client
   {
-    id: "react",
+    id: "otclient",
     type: "pixelNode",
-    position: { x: 290, y: 25 },
-    data: { label: "React", sub: "UI & State", group: "CORE", accent: PINK },
+    position: { x: 20, y: 25 },
+    data: { label: "OTClient", sub: "Player Interface", group: "GAME CLIENT", accent: PINK },
   },
 
-  // Rendering
+  // Game Server
   {
-    id: "canvas",
+    id: "tfs",
     type: "pixelNode",
-    position: { x: 30, y: 160 },
-    data: { label: "Canvas API", sub: "Game Rendering", group: "RENDERING", accent: CYAN },
+    position: { x: 280, y: 25 },
+    data: { label: "TFS 1.4.2", sub: "C++ Game Engine", group: "GAME SERVER", accent: CYAN },
   },
+
+  // Database
   {
-    id: "gameloop",
+    id: "mysql",
     type: "pixelNode",
-    position: { x: 290, y: 175 },
-    data: { label: "Game Loop", sub: "requestAnimationFrame", group: "RENDERING", accent: CYAN },
+    position: { x: 560, y: 25 },
+    data: { label: "MySQL", sub: "Data Persistence", group: "DATABASE", accent: ROSE },
   },
 
   // Web Layer
   {
-    id: "controls",
+    id: "nginx",
     type: "pixelNode",
-    position: { x: 540, y: 160 },
-    data: { label: "Controls", sub: "Keyboard / Touch", group: "WEB LAYER", accent: GOLD },
+    position: { x: 200, y: 255 },
+    data: { label: "NGINX", sub: "Web Server", group: "WEB LAYER", accent: GOLD },
+  },
+  {
+    id: "myacc",
+    type: "pixelNode",
+    position: { x: 400, y: 255 },
+    data: { label: "MyAcc", sub: "Account System", group: "WEB LAYER", accent: GOLD },
   },
 
-  // Audio
+  // Dev Tools
   {
-    id: "audio",
+    id: "rme",
     type: "pixelNode",
-    position: { x: 30, y: 345 },
-    data: { label: "Web Audio API", sub: "SFX & Music", group: "AUDIO", accent: LIME },
+    position: { x: 20, y: 365 },
+    data: { label: "RME", sub: "Map Editor", group: "DEV TOOLS", accent: LIME },
   },
-
-  // Storage
   {
-    id: "storage",
+    id: "objbuilder",
     type: "pixelNode",
-    position: { x: 540, y: 345 },
-    data: { label: "Local Storage", sub: "Scores & Saves", group: "STORAGE", accent: ROSE },
+    position: { x: 240, y: 365 },
+    data: { label: "Object Builder", sub: "Sprites & Assets", group: "DEV TOOLS", accent: LIME },
   },
 ];
 
@@ -179,13 +193,21 @@ const edgeStyle = (color: string) => ({
   strokeWidth: 2,
 });
 
+const lbl = (t: string) => ({ label: t, labelStyle: { fill: "#aaa", fontFamily: "VT323", fontSize: 13 } });
+
 const initialEdges = [
-  { id: "e1", source: "react", target: "canvas", animated: true, style: edgeStyle(CYAN), label: "renders to", labelStyle: { fill: "#aaa", fontFamily: "VT323", fontSize: 13 } },
-  { id: "e2", source: "react", target: "gameloop", animated: true, style: edgeStyle(PINK) },
-  { id: "e3", source: "react", target: "controls", animated: false, style: edgeStyle(GOLD), label: "listens to", labelStyle: { fill: "#aaa", fontFamily: "VT323", fontSize: 13 } },
-  { id: "e4", source: "gameloop", target: "canvas", animated: true, style: edgeStyle(CYAN), label: "drives" , labelStyle: { fill: "#aaa", fontFamily: "VT323", fontSize: 13 }},
-  { id: "e5", source: "gameloop", target: "audio", animated: false, style: edgeStyle(LIME), label: "triggers", labelStyle: { fill: "#aaa", fontFamily: "VT323", fontSize: 13 } },
-  { id: "e6", source: "gameloop", target: "storage", animated: false, style: edgeStyle(ROSE), label: "Read/Write", labelStyle: { fill: "#aaa", fontFamily: "VT323", fontSize: 13 } },
+  // OTClient ↔ TFS via TCP 7171
+  { id: "e1", source: "otclient", target: "tfs", animated: true, style: edgeStyle(PINK), ...lbl("TCP :7171") },
+  // TFS ↔ MySQL
+  { id: "e2", source: "tfs", target: "mysql", animated: false, style: edgeStyle(ROSE), ...lbl("Read/Write") },
+  // NGINX → MyAcc
+  { id: "e3", source: "nginx", target: "myacc", animated: false, style: edgeStyle(GOLD), ...lbl("serves") },
+  // MyAcc ↔ MySQL
+  { id: "e4", source: "myacc", target: "mysql", animated: false, style: edgeStyle(ROSE), ...lbl("accounts") },
+  // RME → TFS (map files)
+  { id: "e5", source: "rme", target: "tfs", animated: false, style: edgeStyle(LIME), ...lbl("map files") },
+  // Object Builder → TFS (sprites/dat)
+  { id: "e6", source: "objbuilder", target: "tfs", animated: false, style: edgeStyle(LIME), ...lbl(".spr/.dat") },
 ];
 
 // ── Main component ──────────────────────────────────────────────────────────
@@ -203,7 +225,7 @@ function DiagramInner() {
     <div
       style={{
         width: "100%",
-        height: 480,
+        height: 520,
         border: "3px solid #ff1493",
         boxShadow: "6px 6px 0 0 #ff149355",
         background: "#080808",
@@ -224,7 +246,7 @@ function DiagramInner() {
           pointerEvents: "none",
         }}
       >
-        PIXEL ARCADE — Technology Stack
+        SERTANIA ONLINE — Technology Architecture
       </div>
       <div
         style={{
@@ -238,7 +260,7 @@ function DiagramInner() {
           pointerEvents: "none",
         }}
       >
-        Browser-native · No server required
+        Custom MMORPG · TFS · MySQL · OTClient · NGINX
       </div>
 
       <ReactFlow
